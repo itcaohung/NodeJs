@@ -10,7 +10,7 @@
 
 ### 1.2 API hoạt động như thế nào?
 
-<img src="[Assets/icon.png](https://github.com/user-attachments/assets/5e1eb91e-2583-43f6-91be-b4f18e9b782f)" width="550">
+<img src="https://github.com/user-attachments/assets/5e1eb91e-2583-43f6-91be-b4f18e9b782f" width="550">
 
 * Client gửi request đến một địa chỉ (endpoint).
 * Server xử lý request và gửi response lại cho client.
@@ -18,7 +18,8 @@
 
 ### 1.3 Thành phần của API:
 
-![image](https://github.com/user-attachments/assets/1f37adaf-00c8-477b-af50-e575341d2853)
+<img src="https://github.com/user-attachments/assets/1f37adaf-00c8-477b-af50-e575341d2853" width="550">
+
 * **Endpoint**: URL cụ thể để gọi API (vd: `/api/users`).
 * **Method**: phương thức HTTP (GET, POST...).
 * **Headers**: chứa thông tin metadata (vd: Authorization).

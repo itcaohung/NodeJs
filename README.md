@@ -1,7 +1,6 @@
 # API
 
 ---
-
 ## 1. GIỚI THIỆU TỔNG QUAN VỀ API
 
 ### 1.1 API là gì?

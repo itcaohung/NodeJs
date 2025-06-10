@@ -10,7 +10,8 @@
 
 ### 1.2 API hoạt động như thế nào?
 
-![image](https://github.com/user-attachments/assets/5e1eb91e-2583-43f6-91be-b4f18e9b782f)
+<img src="[Assets/icon.png](https://github.com/user-attachments/assets/5e1eb91e-2583-43f6-91be-b4f18e9b782f)" width="550">
+
 * Client gửi request đến một địa chỉ (endpoint).
 * Server xử lý request và gửi response lại cho client.
 * Dữ liệu thường được truyền qua định dạng JSON.

@@ -201,6 +201,9 @@ const greetUser = (user: User): string => `Xin chào, ${user.name}`;
 
   ![image](https://github.com/user-attachments/assets/0cf8f2d7-5227-49c1-a687-3ed42cc8e434)
 
+  ![image](https://github.com/user-attachments/assets/9359f928-55fc-47b8-9b88-12d8b51a3b90)
+
+
 
 ### 4.5 Ví dụ cấu trúc route đơn giản với controller
 

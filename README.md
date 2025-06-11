@@ -1,7 +1,7 @@
 # API
 
 ---
-## 1. GIỚI THIỆU TỔNG QUAN VỀ API
+## 📌 1. GIỚI THIỆU TỔNG QUAN VỀ API
 
 ### 1.1 API là gì?
 
@@ -34,24 +34,63 @@
 
 ---
 
-## 2. CÁC PHƯƠNG THỨC TRONG API (HTTP Methods)
+## ✅ 2. CÁC PHƯƠNG THỨC TRONG API (HTTP Methods)
 
-| Phương thức | Mô tả                        | An toàn? | Idempotent? |
-| ----------- | ---------------------------- | -------- | ----------- |
-| GET         | Lấy thông tin                | ✔        | ✔           |
-| POST        | Tạo mới tài nguyên           | ✖        | ✖           |
-| PUT         | Cập nhật toàn bộ tài nguyên  | ✖        | ✔           |
-| PATCH       | Cập nhật một phần tài nguyên | ✖        | ✖           |
-| DELETE      | Xoá tài nguyên               | ✖        | ✔           |
+| Phương thức | Mục đích           | Gửi dữ liệu ở đâu     | Idempotent (*) | Thay đổi dữ liệu |
+|-------------|--------------------|------------------------|----------------|------------------|
+| **GET**     | Lấy dữ liệu        | URL (query params)     | ✅ Có          | ❌ Không         |
+| **POST**    | Tạo mới            | Body                   | ❌ Không       | ✅ Có            |
+| **PUT**     | Cập nhật toàn bộ   | Body                   | ✅ Có          | ✅ Có            |
+| **DELETE**  | Xóa dữ liệu        | Thường trong URL       | ✅ Có          | ✅ Có            |
+> (*) *Idempotent*: Gọi nhiều lần với cùng dữ liệu sẽ không làm thay đổi kết quả trên server (ngoại trừ POST).
 
-### 2.1 Ví dụ thực tế:
+## 🔍 2.1 Chi Tiết Từng Phương Thức
+
+### 🔹 GET
+- **Mục đích**: Truy vấn/lấy dữ liệu.
+- **Dữ liệu**: Truyền qua URL.
+- **Đặc điểm**:
+  - Không thay đổi dữ liệu.
+  - Có thể cache.
+  - Hiển thị rõ trên URL.
+
+---
+
+### 🔹 POST
+- **Mục đích**: Gửi dữ liệu mới lên server (tạo mới bản ghi).
+- **Dữ liệu**: Gửi trong body.
+- **Đặc điểm**:
+  - Có thể thay đổi dữ liệu.
+  - Không idempotent: Gọi 2 lần có thể tạo 2 bản ghi khác nhau.
+  - Không cache.
+
+---
+
+### 🔹 PUT
+- **Mục đích**: Cập nhật toàn bộ tài nguyên (nếu không tồn tại có thể tạo mới tùy theo server).
+- **Dữ liệu**: Gửi trong body.
+- **Đặc điểm**:
+  - Idempotent: Gọi nhiều lần với cùng dữ liệu vẫn cùng 1 kết quả.
+  - Ghi đè toàn bộ thông tin.
+
+---
+
+### 🔹 DELETE
+- **Mục đích**: Xóa tài nguyên.
+- **Dữ liệu**: ID hoặc định danh nằm trong URL.
+- **Đặc điểm**:
+  - Idempotent: Gọi xóa 1 bản ghi đã bị xóa thì cũng không thay đổi gì thêm.
+
+---
+
+### 2.2 Ví dụ thực tế:
 
 * `GET /api/products` → lấy danh sách sản phẩm.
 * `POST /api/users` → đăng ký người dùng mới.
 * `PUT /api/users/1` → cập nhật thông tin user ID=1.
 * `DELETE /api/posts/5` → xoá bài viết có ID=5.
 
-### 2.2 HTTP Status Code
+### 2.3 HTTP Status Code
 
 * **200 OK** – Request thành công.
 * **201 Created** – Tạo mới thành công.

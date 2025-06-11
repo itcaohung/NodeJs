@@ -155,20 +155,41 @@ src/
   * Middleware (xử lý request qua các lớp trung gian)
   * Xử lý JSON, form, cookies, file, v.v.
 
-##### 4.2.2 Ví dụ
+##### 4.2.2 Các tính năng chính của Express.js
 
-```ts
-import express from 'express';
-const app = express();
+##### ✅ Routing (Định tuyến request)
+	
+* Routing là cơ chế định nghĩa cách server phản hồi lại các request từ client với các URL và HTTP method cụ thể.
+* Express giúp định nghĩa các tuyến (route) một cách rõ ràng và đơn giản.
 
-app.use(express.json());
+	```ts
+	// GET request tới /users
+	app.get('/users', (req, res) => {
+	  res.send('Danh sách người dùng');
+	});
+	
+	// POST request tới /users
+	app.post('/users', (req, res) => {
+	  res.send('Tạo người dùng mới');
+	});
+	```
 
-app.get('/api/users', (req, res) => {
-  res.status(200).json({ message: 'Lấy danh sách user' });
-});
+##### ✅ Middleware (Xử lý request qua các lớp trung gian)
 
-app.listen(3000, () => console.log('Server đang chạy'));
-```
+* Middleware là các hàm trung gian, chạy trước khi request đến route handler cuối cùng.
+* Có thể dùng middleware để:
+	* Kiểm tra xác thực (authentication)
+	* Ghi log
+	* Xử lý lỗi
+	* Parse dữ liệu request
+
+	```ts
+	// Middleware kiểm tra thời gian request
+	app.use((req, res, next) => {
+	  console.log('Thời gian:', Date.now());
+	  next(); // chuyển tiếp tới middleware/route tiếp theo
+	});
+	```
 
 ### 4.3 TypeScript
 
@@ -177,20 +198,18 @@ app.listen(3000, () => console.log('Server đang chạy'));
 ##### 4.3.1 Định nghĩa
 * Ngôn ngữ mở rộng của JavaScript với hệ thống **kiểu tĩnh**.
 * Giúp:
-
   * Tăng khả năng tự động hoàn thành code.
   * Phát hiện lỗi compile-time.
   * Tài liệu code rõ ràng hơn.
-
-##### 4.3.2 Ví dụ
-```ts
-interface User {
-  id: number;
-  name: string;
-}
-
-const greetUser = (user: User): string => `Xin chào, ${user.name}`;
-```
+	
+	```ts
+	interface User {
+	  id: number;
+	  name: string;
+	}
+	
+	const greetUser = (user: User): string => `Xin chào, ${user.name}`;
+	```
 
 * File cấu hình: `tsconfig.json` – nơi bật các tùy chọn như `strict`, `target`, `paths`...
 

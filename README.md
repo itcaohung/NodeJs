@@ -199,6 +199,9 @@ const greetUser = (user: User): string => `Xin chào, ${user.name}`;
 * **ESLint**, **Prettier**: giúp code sạch, chuẩn hóa format.
 * **Jest**, **Supertest**: viết unit test, test API.
 
+  ![image](https://github.com/user-attachments/assets/0cf8f2d7-5227-49c1-a687-3ed42cc8e434)
+
+
 ### 4.5 Ví dụ cấu trúc route đơn giản với controller
 
 ```ts

@@ -18,7 +18,8 @@
 
 ### 1.3 Thành phần của API:
 
-<img src="https://github.com/user-attachments/assets/1f37adaf-00c8-477b-af50-e575341d2853" width="550">
+<img src="https://github.com/user-attachments/assets/6224f4a8-f755-4cf8-98ba-26fc3b75c0a4" width="550">
+
 
 * **Endpoint**: URL cụ thể để gọi API (vd: `/api/users`).
 * **Method**: phương thức HTTP (GET, POST...).
